@@ -5,20 +5,19 @@
     versionCode = "1"
     version     = "1.0.0" >
 
-
   <name>Location</name>
 
   <description>
-    
+
   </description>
- 
-    <!--Android 6.0 or newer: Plugin to support runtime permissions--> 
+
+    <!--Android 6.0 or newer: Plugin to support runtime permissions-->
     <plugin name="cordova-plugin-geolocation-android-activator" />
-    
-    <!--Plugin to support gathering of location data--> 
+
+    <!--Plugin to support gathering of location data-->
     <plugin name="cordova-plugin-geolocation"  />
 
-    
+
     <!--Apple iOS 10 or newer: Adding a parameter to the ios build to allow suer to give permission to access location-->
     <config-file platform="ios" parent="NSLocationWhenInUseUsageDescription" mode="merge">
         <array>
@@ -26,5 +25,4 @@
             <string>Give me your location! Let me have it!!!</string>
         </array>
     </config-file>
-    
 </widget>
