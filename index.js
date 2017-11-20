@@ -1,5 +1,5 @@
 //when the jQuery Mobile page is initialised
-$(document).on('pageinit', function() {
+$(document).on('pageinit', initMap() {
 
 	//set up listener for button click
 	$(document).on('click', getPosition);
@@ -15,9 +15,16 @@ function getPosition() {
 	$('#time').val("Getting data...");
 
 	//instruct location service to get position with appropriate callbacks
-	//navigator.geolocation.getCurrentPosition(successPosition, failPosition);
-	navigator.geolocation.watchPosition(successPosition, failPosition, locationOptions);
+	navigator.geolocation.getCurrentPosition(successPosition, failPosition);
+	//navigator.geolocation.watchPosition(successPosition, failPosition, locationOptions);
+}
 
+var map;
+function initMap() {
+	map = new google.maps.Map(document.getElementById('map'), {
+		center: {lat: -34.397, lng: 150.644},
+		zoom: 8
+	});
 }
 
 //set location options
